@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplates.ejs") %>
+<div class="row">
+<div class="col-8 offset-2">
+    <br>
+    <h3>Edit Your Listing</h3>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="post" class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]"  class="form-control" required value="<%= listing.title %>">
+            <div class="invalid-feedback">Enter title.</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea name="listing[description]" required class="form-control" value="<%= listing.description %>"><%= listing.description %>    </textarea>
+            <div class="invalid-feedback">Please enter description.</div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="text" name="listing[image][url]" required class="form-control" value="<%= listing.image.url %>">
+            <div class="invalid-feedback">Give image's URL.</div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="listing[price]" required class="form-control" value="<%= listing.price %>">
+                <div class="invalid-feedback">Enter valid price.</div>
+            </div>
+            <div class="mb-3 col-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="listing[country]" required class="form-control" value="<%= listing.country %>">
+                <div class="invalid-feedback">Add country name.</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" required class="form-control" value="<%= listing.location %>">
+            <div class="invalid-feedback">Provide location.</div>
+        </div>
+        <button type="submit" class="btn mb-2 add-btn">Edit</button>
+        <br>
+    </form>
+    </div>
+</div>     

@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplates.ejs")  %>
+<body>
+    <div class="row mt-5 mb-5">
+        <div class="col-6 offset-3 mt-5 mb-5">
+            <h1>Log-In For Lodgify</h1>
+            <form action="/login" method="post" class="needs-validation mt-3 mb-3" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Enter Your Username</label>
+                    <input id="username" type="text" name="username" class="form-control" required>
+                    <div class="invalid-feedback">Enter a valid username.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input id="Password" type="password" name="password" class="form-control" required>
+                    <div class="invalid-feedback">Enter Password.</div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Log-In</button>
+            </form>
+        </div>
+    </div>
+</body>
